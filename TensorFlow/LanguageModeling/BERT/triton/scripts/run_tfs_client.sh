@@ -13,22 +13,20 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-SERVER_URI=${1:-"localhost"}
+batch_size=${1:-"8"}
+seq_length=${2:-"384"}
+doc_stride=${3:-"128"}
+triton_version_name=${4:-"1"}
+triton_model_name=${5:-"bert"}
+BERT_DIR=${6:-"data/download/nvidia_pretrained/bert_tf_pretraining_large_lamb"}
 
-echo "Waiting for TFS Server to be ready at http://$SERVER_URI:8500... Adding a delay of 30 secondss"
-
-#live_command="curl -m 1 -L -s -o /dev/null -w %{http_code} http://$SERVER_URI:8500/v2/health/live"
-#ready_command="curl -m 1 -L -s -o /dev/null -w %{http_code} http://$SERVER_URI:8500/v2/health/ready"
-
-#current_status=$($live_command)
-
-# First check the current status. If that passes, check the json. If either fail, loop
-for i in {0..30}; do
-
-   printf "."
-   sleep 1
-   #current_status=$($live_command)
-done
-
-echo "TFS Server is ready!"
-
+bash scripts/docker/launch.sh \
+   "python triton/run_squad_tfs_client.py \
+      --triton_model_name=$triton_model_name \
+      --triton_model_version=$triton_version_name \
+      --vocab_file=$BERT_DIR/vocab.txt \
+      --predict_batch_size=$batch_size \
+      --max_seq_length=${seq_length} \
+      --doc_stride=${doc_stride} \
+      --output_dir=/results \
+      ${@:7}"

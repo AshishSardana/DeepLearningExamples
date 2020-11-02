@@ -80,13 +80,13 @@ if [ "$triton_export_model" = "true" ] ; then
 fi
 
 # Start TRTIS server in detached state
-#bash triton/scripts/launch_server_tfs.sh
+bash triton/scripts/launch_server_tfs.sh
 
 # Wait until server is up. curl on the health of the server and sleep until its ready
-#bash triton/scripts/wait_for_tfs_server.sh localhost
+bash triton/scripts/wait_for_tfs_server.sh localhost
 
 # Start TRTIS client for inference on SQuAD Dataset
-bash triton/scripts/run_client.sh $batch_size $seq_length $doc_stride $triton_version_name $triton_model_name \
+bash triton/scripts/run_tfs_client.sh $batch_size $seq_length $doc_stride $triton_version_name $triton_model_name \
     $BERT_DIR --version_2_with_negative=${version_2_with_negative} --predict_file=$SQUAD_DIR/dev-v${squad_version}.json 
 
 # Evaluate SQuAD results

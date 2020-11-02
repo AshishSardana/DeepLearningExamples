@@ -89,7 +89,7 @@ flags.DEFINE_bool(
 # Triton Specific flags
 flags.DEFINE_string("triton_model_name", "bert", "exports to appropriate directory for Triton")
 flags.DEFINE_integer("triton_model_version", 1, "exports to appropriate directory for Triton")
-flags.DEFINE_string("triton_server_url", "localhost:8500", "exports to appropriate directory for Triton")
+flags.DEFINE_string("triton_server_url", "localhost:8001", "exports to appropriate directory for Triton")
 
 # Input Text for Inference
 flags.DEFINE_string("question", None, "Question for Inference")
@@ -186,7 +186,7 @@ def main(_):
 
     protocol_str = 'grpc' # http or grpc
     url = FLAGS.triton_server_url
-    verbose = False
+    verbose = True
     model_name = FLAGS.triton_model_name
     model_version = str(FLAGS.triton_model_version)
     batch_size = FLAGS.predict_batch_size
