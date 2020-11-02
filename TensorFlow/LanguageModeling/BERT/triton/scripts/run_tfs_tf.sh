@@ -82,7 +82,7 @@ fi
 # Start TRTIS server in detached state
 bash triton/scripts/launch_server_tfs.sh
 
-# Wait until server is up. curl on the health of the server and sleep until its ready
+# Wait until server is up. Add a manual delay of 30 sec as TFS doesn't have a health API
 bash triton/scripts/wait_for_tfs_server.sh localhost
 
 # Start TRTIS client for inference on SQuAD Dataset

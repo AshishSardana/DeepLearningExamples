@@ -23,9 +23,7 @@ from functools import partial
 
 # For TFS native client
 from tensorflow.contrib.util import make_tensor_proto
-
-from tensorflow_serving.apis import predict_pb2
-from tensorflow_serving.apis import prediction_service_pb2_grpc
+from tensorflow_serving.apis import predict_pb2, prediction_service_pb2_grpc
 
 import sys
 if sys.version_info >= (3, 0):
@@ -95,7 +93,7 @@ flags.DEFINE_bool(
 # Triton Specific flags
 flags.DEFINE_string("triton_model_name", "bert", "exports to appropriate directory for Triton")
 flags.DEFINE_integer("triton_model_version", 1, "exports to appropriate directory for Triton")
-flags.DEFINE_string("triton_server_url", "localhost:8001", "exports to appropriate directory for Triton")
+flags.DEFINE_string("triton_server_url", "localhost:8500", "exports to appropriate directory for Triton")
 
 # Input Text for Inference
 flags.DEFINE_string("question", None, "Question for Inference")
@@ -204,7 +202,6 @@ def main(_):
     request = predict_pb2.PredictRequest()
     request.model_spec.name = model_name
     request.model_spec.signature_name = 'serving_default'
-    request.inputs['image'].CopyFrom(make_tensor_proto(data, shape=[1, 28, 28, 1]))
     '''
     triton_client = tritongrpcclient.InferenceServerClient(url, verbose)
     model_metadata = triton_client.get_model_metadata(

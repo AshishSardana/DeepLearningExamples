@@ -27,7 +27,6 @@ if sys.version_info >= (3, 0):
 else:
   import Queue as queue
 
-
 flags = tf.flags
 FLAGS = flags.FLAGS
 
@@ -89,7 +88,7 @@ flags.DEFINE_bool(
 # Triton Specific flags
 flags.DEFINE_string("triton_model_name", "bert", "exports to appropriate directory for Triton")
 flags.DEFINE_integer("triton_model_version", 1, "exports to appropriate directory for Triton")
-flags.DEFINE_string("triton_server_url", "localhost:8001", "exports to appropriate directory for Triton")
+flags.DEFINE_string("triton_server_url", "localhost:8500", "exports to appropriate directory for Triton")
 
 # Input Text for Inference
 flags.DEFINE_string("question", None, "Question for Inference")
@@ -186,17 +185,19 @@ def main(_):
 
     protocol_str = 'grpc' # http or grpc
     url = FLAGS.triton_server_url
-    verbose = True
+    verbose = False
     model_name = FLAGS.triton_model_name
     model_version = str(FLAGS.triton_model_version)
     batch_size = FLAGS.predict_batch_size
 
     triton_client = tritongrpcclient.InferenceServerClient(url, verbose)
+    # Not required, hence commenting
+    '''
     model_metadata = triton_client.get_model_metadata(
         model_name=model_name, model_version=model_version)
     model_config = triton_client.get_model_config(
         model_name=model_name, model_version=model_version)
-
+    '''
     user_data = UserData()
 
     max_outstanding = 20
