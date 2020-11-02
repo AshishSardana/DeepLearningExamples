@@ -12,7 +12,8 @@ docker run --gpus $NV_VISIBLE_DEVICES --rm $DETACHED \
    -p8000:8501 \
    -p8502:8502 \
    --name tfs_server_cont \
+   --runtime=nvidia \ 
    -e NVIDIA_VISIBLE_DEVICES=$NV_VISIBLE_DEVICES \
    -e MODEL_NAME=bert \
    -v $PWD/results/triton_models/bert:/models/bert \
-   tensorflow/serving &
+   tensorflow/serving:latest-gpu &
