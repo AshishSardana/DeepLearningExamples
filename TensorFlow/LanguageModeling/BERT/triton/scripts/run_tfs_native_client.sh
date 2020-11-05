@@ -20,13 +20,15 @@ triton_version_name=${4:-"1"}
 triton_model_name=${5:-"bert"}
 BERT_DIR=${6:-"data/download/nvidia_pretrained/bert_tf_pretraining_large_lamb"}
 
-bash scripts/docker/launch_tfs.sh \
-   "python triton/run_squad_tfs_client.py \
-      --triton_model_name=$triton_model_name \
-      --triton_model_version=$triton_version_name \
-      --vocab_file=$BERT_DIR/vocab.txt \
-      --predict_batch_size=$batch_size \
-      --max_seq_length=${seq_length} \
-      --doc_stride=${doc_stride} \
-      --output_dir=/results \
-      ${@:7}"
+bash scripts/docker/launch.sh 
+
+#bash scripts/docker/launch.sh 
+#   "pip install tensorflow-serving-api" "python triton/run_squad_tfs_native_client.py \
+#      --triton_model_name=$triton_model_name \
+#      --triton_model_version=$triton_version_name \
+#      --vocab_file=$BERT_DIR/vocab.txt \
+#      --predict_batch_size=$batch_size \
+#      --max_seq_length=${seq_length} \
+#      --doc_stride=${doc_stride} \
+#      --output_dir=/results \
+#      ${@:7}"

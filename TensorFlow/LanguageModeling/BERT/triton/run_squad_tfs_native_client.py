@@ -282,9 +282,9 @@ def main(_):
 
         #inputs = []
         request.inputs['input_ids'].CopyFrom(make_tensor_proto(input_ids_data, shape=input_ids_data.shape))
-        request.inputs['input_mask'].CopyFrom(make_tensor_proto(input_mask, shape=input_mask.shape))
+        request.inputs['input_mask'].CopyFrom(make_tensor_proto(input_mask_data, shape=input_mask_data.shape))
         request.inputs['segment_ids'].CopyFrom(make_tensor_proto(segment_ids_data, shape=segment_ids_data.shape))
-        request.inputs['label_id_key'].CopyFrom(make_tensor_proto(label_ids_data, shape=label_ids_data.shape))
+        request.inputs[label_id_key].CopyFrom(make_tensor_proto(label_ids_data, shape=label_ids_data.shape))
         '''
         inputs.append(tritongrpcclient.InferInput('input_ids', input_ids_data.shape, "INT32"))
         inputs[0].set_data_from_numpy(input_ids_data)
