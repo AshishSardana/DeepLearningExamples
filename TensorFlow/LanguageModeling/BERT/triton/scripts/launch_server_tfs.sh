@@ -5,7 +5,10 @@ BATCHING=${1:-false}
 ARGUMENTS=""
 
 if [[ $BATCHING == true ]]; then
-  ARGUMENTS="--enable_batching --batching_parameters_file=$PWD/triton/batching_params_file_tfs"
+  # enable batching with a specific batch_size and num_threads
+  #ARGUMENTS="--enable_batching --batching_parameters_file=$PWD/triton/batching_params_file_tfs"
+  # only enable batching with no specific params
+  ARGUMENTS="--enable_batching"
 fi
 
 echo "Using args:  $(echo "$ARGUMENTS" | sed -e 's/   -/\n-/g')"
@@ -19,6 +22,5 @@ docker run --gpus $NV_VISIBLE_DEVICES --rm $DETACHED \
    -p8500:8500 \
    -p8501:8501 \
    -p8502:8502 \
-   --name tfs_server_cont \
    -v $PWD/results/triton_models/bert/1/model.savedmodel/:/models/bert/1/ \
    tensorflow/serving:latest-gpu $ARGS
