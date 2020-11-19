@@ -42,8 +42,8 @@ ARGS="\
    -l ${MAX_LATENCY} \
    -c ${MAX_CONCURRENCY} \
    -f ${OUTPUT_FILE_CSV} \
-   --service-kind tfserving \
-   --shape input:${BATCH_SIZE},224,224,3"
+   -b ${BATCH_SIZE} \
+   --service-kind tfserving"
 
 echo "Using args:  $(echo "$ARGS" | sed -e 's/   -/\n-/g')"
 
