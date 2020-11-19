@@ -1,0 +1,2970 @@
+feature {
+  name: "ad_advertiser"
+  type: INT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "ad_id"
+  type: INT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "ad_views_log_01scaled"
+  type: FLOAT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "ad_views_log_int"
+  type: INT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "display_ad_and_is_leak"
+  type: INT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "display_id"
+  type: INT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "doc_ad_category_id"
+  type: INT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 3
+    }
+  }
+}
+feature {
+  name: "doc_ad_days_since_published_log_01scaled"
+  type: FLOAT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "doc_ad_days_since_published_log_int"
+  type: INT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "doc_ad_entity_id"
+  type: INT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 6
+    }
+  }
+}
+feature {
+  name: "doc_ad_publisher_id"
+  type: INT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "doc_ad_source_id"
+  type: INT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "doc_ad_topic_id"
+  type: INT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 3
+    }
+  }
+}
+feature {
+  name: "doc_event_category_id"
+  type: INT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 3
+    }
+  }
+}
+feature {
+  name: "doc_event_days_since_published_log_01scaled"
+  type: FLOAT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "doc_event_days_since_published_log_int"
+  type: INT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "doc_event_doc_ad_sim_categories"
+  type: FLOAT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "doc_event_doc_ad_sim_categories_binned"
+  type: INT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "doc_event_doc_ad_sim_categories_conf"
+  type: FLOAT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "doc_event_doc_ad_sim_categories_conf_binned"
+  type: INT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "doc_event_doc_ad_sim_categories_conf_multipl"
+  type: FLOAT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "doc_event_doc_ad_sim_categories_conf_multipl_binned"
+  type: INT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "doc_event_doc_ad_sim_categories_conf_multipl_log_01scaled"
+  type: FLOAT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "doc_event_doc_ad_sim_categories_log_01scaled"
+  type: FLOAT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "doc_event_doc_ad_sim_entities"
+  type: FLOAT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "doc_event_doc_ad_sim_entities_binned"
+  type: INT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "doc_event_doc_ad_sim_entities_conf"
+  type: FLOAT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "doc_event_doc_ad_sim_entities_conf_binned"
+  type: INT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "doc_event_doc_ad_sim_entities_conf_multipl"
+  type: FLOAT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "doc_event_doc_ad_sim_entities_conf_multipl_binned"
+  type: INT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "doc_event_doc_ad_sim_entities_conf_multipl_log_01scaled"
+  type: FLOAT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "doc_event_doc_ad_sim_entities_log_01scaled"
+  type: FLOAT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "doc_event_doc_ad_sim_topics"
+  type: FLOAT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "doc_event_doc_ad_sim_topics_binned"
+  type: INT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "doc_event_doc_ad_sim_topics_conf"
+  type: FLOAT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "doc_event_doc_ad_sim_topics_conf_binned"
+  type: INT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "doc_event_doc_ad_sim_topics_conf_multipl"
+  type: FLOAT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "doc_event_doc_ad_sim_topics_conf_multipl_binned"
+  type: INT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "doc_event_doc_ad_sim_topics_conf_multipl_log_01scaled"
+  type: FLOAT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "doc_event_doc_ad_sim_topics_log_01scaled"
+  type: FLOAT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "doc_event_entity_id"
+  type: INT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 6
+    }
+  }
+}
+feature {
+  name: "doc_event_hour_log_01scaled"
+  type: FLOAT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "doc_event_hour_log_int"
+  type: INT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "doc_event_id"
+  type: INT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "doc_event_publisher_id"
+  type: INT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "doc_event_source_id"
+  type: INT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "doc_event_topic_id"
+  type: INT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 3
+    }
+  }
+}
+feature {
+  name: "doc_id"
+  type: INT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "doc_views_log_01scaled"
+  type: FLOAT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "doc_views_log_int"
+  type: INT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "event_country"
+  type: INT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "event_country_state"
+  type: INT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "event_geo_location"
+  type: INT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "event_hour"
+  type: INT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "event_platform"
+  type: INT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "event_weekend"
+  type: INT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "is_leak"
+  type: INT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "label"
+  type: INT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "pop_ad_id"
+  type: FLOAT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "pop_ad_id_binned"
+  type: INT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "pop_ad_id_conf"
+  type: FLOAT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "pop_ad_id_conf_binned"
+  type: INT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "pop_ad_id_conf_multipl"
+  type: FLOAT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "pop_ad_id_conf_multipl_binned"
+  type: INT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "pop_ad_id_conf_multipl_log_01scaled"
+  type: FLOAT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "pop_ad_id_log_01scaled"
+  type: FLOAT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "pop_advertiser_id"
+  type: FLOAT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "pop_advertiser_id_binned"
+  type: INT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "pop_advertiser_id_conf"
+  type: FLOAT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "pop_advertiser_id_conf_binned"
+  type: INT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "pop_advertiser_id_conf_multipl"
+  type: FLOAT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "pop_advertiser_id_conf_multipl_binned"
+  type: INT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "pop_advertiser_id_conf_multipl_log_01scaled"
+  type: FLOAT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "pop_advertiser_id_log_01scaled"
+  type: FLOAT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "pop_campain_id"
+  type: FLOAT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "pop_campain_id_binned"
+  type: INT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "pop_campain_id_conf"
+  type: FLOAT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "pop_campain_id_conf_binned"
+  type: INT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "pop_campain_id_conf_multipl"
+  type: FLOAT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "pop_campain_id_conf_multipl_binned"
+  type: INT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "pop_campain_id_conf_multipl_log_01scaled"
+  type: FLOAT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "pop_campain_id_log_01scaled"
+  type: FLOAT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "pop_category_id"
+  type: FLOAT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "pop_category_id_binned"
+  type: INT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "pop_category_id_conf"
+  type: FLOAT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "pop_category_id_conf_binned"
+  type: INT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "pop_category_id_conf_multipl"
+  type: FLOAT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "pop_category_id_conf_multipl_binned"
+  type: INT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "pop_category_id_conf_multipl_log_01scaled"
+  type: FLOAT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "pop_category_id_country"
+  type: FLOAT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "pop_category_id_country_binned"
+  type: INT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "pop_category_id_country_conf"
+  type: FLOAT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "pop_category_id_country_conf_binned"
+  type: INT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "pop_category_id_country_conf_multipl"
+  type: FLOAT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "pop_category_id_country_conf_multipl_binned"
+  type: INT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "pop_category_id_country_conf_multipl_log_01scaled"
+  type: FLOAT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "pop_category_id_country_log_01scaled"
+  type: FLOAT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "pop_category_id_log_01scaled"
+  type: FLOAT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "pop_doc_event_doc_ad"
+  type: FLOAT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "pop_doc_event_doc_ad_binned"
+  type: INT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "pop_doc_event_doc_ad_conf"
+  type: FLOAT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "pop_doc_event_doc_ad_conf_binned"
+  type: INT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "pop_doc_event_doc_ad_conf_multipl"
+  type: FLOAT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "pop_doc_event_doc_ad_conf_multipl_binned"
+  type: INT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "pop_doc_event_doc_ad_conf_multipl_log_01scaled"
+  type: FLOAT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "pop_doc_event_doc_ad_log_01scaled"
+  type: FLOAT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "pop_document_id"
+  type: FLOAT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "pop_document_id_binned"
+  type: INT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "pop_document_id_conf"
+  type: FLOAT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "pop_document_id_conf_binned"
+  type: INT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "pop_document_id_conf_multipl"
+  type: FLOAT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "pop_document_id_conf_multipl_binned"
+  type: INT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "pop_document_id_conf_multipl_log_01scaled"
+  type: FLOAT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "pop_document_id_log_01scaled"
+  type: FLOAT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "pop_entity_id"
+  type: FLOAT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "pop_entity_id_binned"
+  type: INT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "pop_entity_id_conf"
+  type: FLOAT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "pop_entity_id_conf_binned"
+  type: INT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "pop_entity_id_conf_multipl"
+  type: FLOAT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "pop_entity_id_conf_multipl_binned"
+  type: INT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "pop_entity_id_conf_multipl_log_01scaled"
+  type: FLOAT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "pop_entity_id_country"
+  type: FLOAT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "pop_entity_id_country_binned"
+  type: INT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "pop_entity_id_country_conf"
+  type: FLOAT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "pop_entity_id_country_conf_binned"
+  type: INT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "pop_entity_id_country_conf_multipl"
+  type: FLOAT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "pop_entity_id_country_conf_multipl_binned"
+  type: INT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "pop_entity_id_country_conf_multipl_log_01scaled"
+  type: FLOAT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "pop_entity_id_country_log_01scaled"
+  type: FLOAT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "pop_entity_id_log_01scaled"
+  type: FLOAT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "pop_publisher_id"
+  type: FLOAT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "pop_publisher_id_binned"
+  type: INT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "pop_publisher_id_conf"
+  type: FLOAT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "pop_publisher_id_conf_binned"
+  type: INT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "pop_publisher_id_conf_multipl"
+  type: FLOAT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "pop_publisher_id_conf_multipl_binned"
+  type: INT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "pop_publisher_id_conf_multipl_log_01scaled"
+  type: FLOAT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "pop_publisher_id_log_01scaled"
+  type: FLOAT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "pop_source_id"
+  type: FLOAT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "pop_source_id_binned"
+  type: INT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "pop_source_id_conf"
+  type: FLOAT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "pop_source_id_conf_binned"
+  type: INT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "pop_source_id_conf_multipl"
+  type: FLOAT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "pop_source_id_conf_multipl_binned"
+  type: INT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "pop_source_id_conf_multipl_log_01scaled"
+  type: FLOAT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "pop_source_id_country"
+  type: FLOAT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "pop_source_id_country_binned"
+  type: INT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "pop_source_id_country_conf"
+  type: FLOAT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "pop_source_id_country_conf_binned"
+  type: INT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "pop_source_id_country_conf_multipl"
+  type: FLOAT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "pop_source_id_country_conf_multipl_binned"
+  type: INT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "pop_source_id_country_conf_multipl_log_01scaled"
+  type: FLOAT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "pop_source_id_country_log_01scaled"
+  type: FLOAT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "pop_source_id_log_01scaled"
+  type: FLOAT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "pop_topic_id"
+  type: FLOAT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "pop_topic_id_binned"
+  type: INT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "pop_topic_id_conf"
+  type: FLOAT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "pop_topic_id_conf_binned"
+  type: INT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "pop_topic_id_conf_multipl"
+  type: FLOAT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "pop_topic_id_conf_multipl_binned"
+  type: INT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "pop_topic_id_conf_multipl_log_01scaled"
+  type: FLOAT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "pop_topic_id_country"
+  type: FLOAT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "pop_topic_id_country_binned"
+  type: INT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "pop_topic_id_country_conf"
+  type: FLOAT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "pop_topic_id_country_conf_binned"
+  type: INT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "pop_topic_id_country_conf_multipl"
+  type: FLOAT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "pop_topic_id_country_conf_multipl_binned"
+  type: INT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "pop_topic_id_country_conf_multipl_log_01scaled"
+  type: FLOAT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "pop_topic_id_country_log_01scaled"
+  type: FLOAT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "pop_topic_id_log_01scaled"
+  type: FLOAT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "traffic_source"
+  type: INT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "user_doc_ad_sim_categories"
+  type: FLOAT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "user_doc_ad_sim_categories_binned"
+  type: INT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "user_doc_ad_sim_categories_conf"
+  type: FLOAT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "user_doc_ad_sim_categories_conf_binned"
+  type: INT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "user_doc_ad_sim_categories_conf_multipl"
+  type: FLOAT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "user_doc_ad_sim_categories_conf_multipl_binned"
+  type: INT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "user_doc_ad_sim_categories_conf_multipl_log_01scaled"
+  type: FLOAT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "user_doc_ad_sim_categories_log_01scaled"
+  type: FLOAT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "user_doc_ad_sim_entities"
+  type: FLOAT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "user_doc_ad_sim_entities_binned"
+  type: INT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "user_doc_ad_sim_entities_conf"
+  type: FLOAT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "user_doc_ad_sim_entities_conf_binned"
+  type: INT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "user_doc_ad_sim_entities_conf_multipl"
+  type: FLOAT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "user_doc_ad_sim_entities_conf_multipl_binned"
+  type: INT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "user_doc_ad_sim_entities_conf_multipl_log_01scaled"
+  type: FLOAT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "user_doc_ad_sim_entities_log_01scaled"
+  type: FLOAT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "user_doc_ad_sim_topics"
+  type: FLOAT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "user_doc_ad_sim_topics_binned"
+  type: INT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "user_doc_ad_sim_topics_conf"
+  type: FLOAT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "user_doc_ad_sim_topics_conf_binned"
+  type: INT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "user_doc_ad_sim_topics_conf_multipl"
+  type: FLOAT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "user_doc_ad_sim_topics_conf_multipl_binned"
+  type: INT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "user_doc_ad_sim_topics_conf_multipl_log_01scaled"
+  type: FLOAT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "user_doc_ad_sim_topics_log_01scaled"
+  type: FLOAT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "user_has_already_viewed_doc"
+  type: INT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "user_views_log_01scaled"
+  type: FLOAT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "user_views_log_int"
+  type: INT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 4096
+    }
+    dim {
+      size: 1
+    }
+  }
+}
