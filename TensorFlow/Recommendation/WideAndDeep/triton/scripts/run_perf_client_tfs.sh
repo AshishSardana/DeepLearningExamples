@@ -41,9 +41,10 @@ ARGS="\
    -u ${SERVER_HOSTNAME}:8500 \
    -l ${MAX_LATENCY} \
    -c ${MAX_CONCURRENCY} \
-   -f ${OUTPUT_FILE_CSV} \
+   -f ${OUTPUT_FILE_CSV} \ 
+   -b ${BATCH_SIZE} \
    --service-kind tfserving \
-   --shape input:${BATCH_SIZE},224,224,3"
+   --model-signature-name predict"
 
 echo "Using args:  $(echo "$ARGS" | sed -e 's/   -/\n-/g')"
 

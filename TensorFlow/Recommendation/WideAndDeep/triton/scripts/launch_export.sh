@@ -13,4 +13,4 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-docker run -it --rm --runtime=nvidia -v $PWD:/wide_deep_tf wide_deep:latest bash "/wide_deep_tf/triton/scripts/export_model.sh"
+docker run -it --rm --runtime=nvidia -v $PWD:/wide_deep_tf wide_deep bash "/wide_deep_tf/triton/scripts/export_model.sh"

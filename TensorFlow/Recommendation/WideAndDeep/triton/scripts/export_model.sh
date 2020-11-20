@@ -2,9 +2,9 @@
 
 CHECKPOINT_PATH=${1:-"./triton/model"}
 EXPORT_SAVED_MODEL_DIR=${2:-"./triton/model/saved_model"} 
-PRECISION=${3:-"FP32"}
+PRECISION=${3:-"FP32"} # *can* change this to FP16
 TRANSFORMED_METADATA_PATH=${4:-"./outbrain/tfrecords"}
-TRITON_FOR_TFTRT=${5:-"false"}
+TRITON_FOR_TFTRT=${5:-"false"} # *can* change this to true to use TFTRT optimized model in the above precision
 
 TRITON_FOR_SAVED_OR_TFTRT="./triton/model/saved_model" # default for saved model
 
