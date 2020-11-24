@@ -13,3 +13,4 @@ docker run --runtime=nvidia --rm $DETACHED \
    -e NVIDIA_VISIBLE_DEVICES=$NV_VISIBLE_DEVICES \
    -v $PWD/inference/models/:/models/ \
    nvcr.io/nvidia/tritonserver:20.09-py3 tritonserver --model-store=/models --strict-model-config=false --log-verbose=1 --backend-config=tensorflow,version=2
+   # nvcr.io/nvidia/tritonserver:20.03-py3 trtserver --model-repository=/models --log-verbose=0

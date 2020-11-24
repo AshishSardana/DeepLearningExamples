@@ -46,6 +46,7 @@ then
 fi
 
 # Wait until server is up. curl on the health of the server and sleep until its ready
+# sleep 30
 bash triton/scripts/wait_for_triton_server.sh $SERVER_HOSTNAME
 
 TIMESTAMP=$(date "+%y%m%d_%H%M")
@@ -70,3 +71,4 @@ ARGS="\
 echo "Using args:  $(echo "$ARGS" | sed -e 's/   -/\n-/g')"
 
 bash triton/scripts/launch.sh /workspace/widedeep/perf_analyzer $ARGS
+# bash triton/scripts/launch.sh perf_client $ARGS

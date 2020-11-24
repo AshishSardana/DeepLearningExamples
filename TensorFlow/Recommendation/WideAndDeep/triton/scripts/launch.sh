@@ -13,3 +13,4 @@ docker run --gpus $NV_VISIBLE_DEVICES --rm -it \
     -v $PWD:/workspace/widedeep \
     -v $PWD/results:/results \
     bert $CMD
+    # nvcr.io/nvidia/tritonserver:20.03-py3-clientsdk $CMD
