@@ -11,6 +11,5 @@ docker run --runtime=nvidia --rm $DETACHED \
    -p8002:8002 \
    --name triton_server_cont \
    -e NVIDIA_VISIBLE_DEVICES=$NV_VISIBLE_DEVICES \
-   -v $PWD/triton/model/config.pbtxt:/models/resnet50/config.pbtxt \
-   -v $PWD/triton/model/saved_model/nvidia_rn50_tf_amp/:/models/resnet50/1/model.savedmodel/ \
+   -v $PWD/triton/inference/:/models/ \
    nvcr.io/nvidia/tritonserver:20.09-py3 tritonserver --model-store=/models --strict-model-config=false --log-verbose=1 --backend-config=tensorflow,version=2

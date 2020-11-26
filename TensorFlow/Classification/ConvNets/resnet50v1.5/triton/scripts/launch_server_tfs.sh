@@ -22,5 +22,5 @@ docker run --gpus $NV_VISIBLE_DEVICES --rm $DETACHED \
    -p8500:8500 \
    -p8501:8501 \
    -p8502:8502 \
-   -v $PWD/triton/model/saved_model/nvidia_rn50_tf_amp/:/models/resnet50/1/ \
-   tensorflow/serving:latest-gpu $ARGS
+   -v $PWD/triton/inference/resnet50/1/model.savedmodel/:/models/resnet50/1/ \
+   tensorflow/serving:latest-gpu $ARGUMENTS
