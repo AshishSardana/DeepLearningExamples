@@ -27,6 +27,12 @@ def create_parser():
         type=str,
         default='./triton/model/tftrt'
     )
+    parser.add_argument(
+        '--infer_model_dir',
+        help='Directory where tftrt model will be copied for inferencing',
+        type=str,
+        default='./triton/inference/resnet50/1/model.savedmodel/'
+    )
     return parser
 
 def export(FLAGS):
@@ -60,8 +66,9 @@ if __name__ == '__main__':
     os.mkdir(FLAGS.export_tftrt_dir)
     export(FLAGS)
 
-    # Copy the newly created TF-TRT model to the folder mounted in inferencing services
-    shutil.copyfile(os.path.join(FLAGS.export_tftrt_dir, "saved_model.pb"), os.path.join(FLAGS.saved_model_dir, "saved_model.pb"))
-    shutil.rmtree(os.path.join(FLAGS.saved_model_dir, "variables"))
+    # Copy the newly created TF-TRT model to the folder mounted for inferencing services
+    shutil.copyfile(os.path.join(FLAGS.export_tftrt_dir, "saved_model.pb"), os.path.join(FLAGS.infer_model_dir, "saved_model.pb"))
+    #shutil.rmtree(os.path.join(FLAGS.infer_model_dir, "variables"))
+    #os.mkdir(os.path.join(FLAGS.infer_model_dir, "variables"))
 
-    print(f'[*] Tftrt Saved Model copied to {FLAGS.saved_model_dir} for use in inferencing service')
+    print(f'[*] Tftrt Saved Model copied to {FLAGS.infer_model_dir} for use in inferencing service')

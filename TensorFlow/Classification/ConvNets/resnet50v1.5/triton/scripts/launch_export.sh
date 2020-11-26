@@ -16,11 +16,18 @@
 precision_mode=${1:-"FP32"}
 saved_model_dir=${2:-"./triton/model/saved_model/nvidia_rn50_tf_amp"}
 export_tftrt_dir=${3:-"./triton/model/tftrt/"}
+infer_model_dir=${4:-"./triton/inference/resnet50/1/model.savedmodel/"}
 
 ARGS="\
    --precision_mode ${precision_mode} \
    --saved_model_dir ${saved_model_dir} \
-   --export_tftrt_dir ${export_tftrt_dir}"
+   --export_tftrt_dir ${export_tftrt_dir} \
+   --infer_model_dir ${infer_model_dir}"
 
 docker run -it --rm --runtime=nvidia -v $PWD:/resnet50 bert python /resnet50/triton/scripts/export_model.py ${ARGS}
-#docker run -it --rm --runtime=nvidia -v $PWD:/resnet50 bert ls /resnet50/triton/scripts/
+
+# Remove variables content from model-repo folder as TF-TRT doesn't need it
+echo "Removed variables folder from model-repo as TF-TRT doesn't need it"
+variables="${infer_model_dir}variables/"
+rm -rf $variables
+mkdir $variables
