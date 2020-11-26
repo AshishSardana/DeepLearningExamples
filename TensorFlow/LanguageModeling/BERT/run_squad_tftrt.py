@@ -842,6 +842,15 @@ def export_model(estimator, export_dir, init_checkpoint):
 
     if FLAGS.use_tftrt == True:
         print("***********USING TFTRT IN EXPORT MODEL***********")
+        
+        # From Swetha, using fewer arguments
+        converter = trt.TrtGraphConverter(
+        input_saved_model_dir=saved_dir,
+        max_workspace_size_bytes=(11 < 32),
+        precision_mode="FP16", maximum_cached_engines = 100)
+
+        # From get_frozen_tftrt_model(), added serving arguments
+        '''
         output_node_names = ['unstack']
         converter = trt.TrtGraphConverter(
         input_saved_model_dir=saved_dir,
@@ -854,8 +863,9 @@ def export_model(estimator, export_dir, init_checkpoint):
         is_dynamic_op=True,
         maximum_cached_engines=1000
         )
-        frozen_graph = converter.convert()
+        '''
 
+        frozen_graph = converter.convert()
         print('Total node count after TF-TRT conversion:',
               len(frozen_graph.node))
         print('TRT node count:',

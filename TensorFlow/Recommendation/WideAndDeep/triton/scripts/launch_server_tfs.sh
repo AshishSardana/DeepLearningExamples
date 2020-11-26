@@ -23,4 +23,4 @@ docker run --gpus $NV_VISIBLE_DEVICES --rm $DETACHED \
    -p8501:8501 \
    -p8502:8502 \
    -v $PWD/inference/models/widedeep/1/model.savedmodel/:/models/widedeep/1/ \
-   tensorflow/serving:latest-gpu $ARGS
+   tensorflow/serving:latest-gpu $ARGUMENTS

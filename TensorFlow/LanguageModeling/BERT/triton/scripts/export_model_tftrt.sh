@@ -43,14 +43,14 @@ if [ "$use_trt" = "true" ] ; then
    echo "tftrt activated by using output_spec from tftrt frozen graph in tf export estimator!"
    additional_args="$additional_args --use_trt"
 else
-   echo "not using trt"
+   echo "not using FLAGS.use_trt"
 fi
 
 if [ "$use_tftrt" = "true" ] ; then
    echo "tftrt activated by converting exported tf savedmodel to tftrt frozen graph"
    additional_args="$additional_args --use_tftrt"
 else
-   echo "not using tftrt"
+   echo "not using FLAGS.use_tftrt"
 fi
 
 if [ "$use_xla" = "true" ] ; then
