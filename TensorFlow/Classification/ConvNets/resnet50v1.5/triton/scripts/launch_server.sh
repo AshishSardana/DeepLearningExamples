@@ -1,5 +1,5 @@
 NV_VISIBLE_DEVICES=${NVIDIA_VISIBLE_DEVICES:-"1"}
-DETACHED=${DETACHED:-"-d"}
+DETACHED=${DETACHED:-"-it"}
 
 # Start TRITON server in DETACHED state
 docker run --runtime=nvidia --rm $DETACHED \
@@ -12,4 +12,5 @@ docker run --runtime=nvidia --rm $DETACHED \
    --name triton_server_cont \
    -e NVIDIA_VISIBLE_DEVICES=$NV_VISIBLE_DEVICES \
    -v $PWD/triton/inference/:/models/ \
-   nvcr.io/nvidia/tritonserver:20.09-py3 tritonserver --model-store=/models --strict-model-config=false --log-verbose=1 --backend-config=tensorflow,version=2
+   #nvcr.io/nvidia/tritonserver:20.09-py3 tritonserver --model-store=/models  --log-verbose=1 --backend-config=tensorflow,version=2
+   #nvcr.io/nvidia/tritonserver:20.09-py3 tritonserver --model-store=/models --strict-model-config=false --log-verbose=1 --backend-config=tensorflow,version=2
