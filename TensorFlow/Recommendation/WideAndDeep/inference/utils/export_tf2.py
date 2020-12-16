@@ -96,12 +96,20 @@ def export(FLAGS):
     print(f'[*] SavedModel exported to {exported_saved_model_dir}')
 
     print('[*] Converting Saved Model to TF-TRT ...')
-    converter = trt.TrtGraphConverter(
+    conversion_params = trt.DEFAULT_TRT_CONVERSION_PARAMS
+    conversion_params = conversion_params._replace(
+    max_workspace_size_bytes=(2 < 32))
+    conversion_params = conversion_params._replace(precision_mode=FLAGS.precision_mode)
+    conversion_params = conversion_params._replace(
+    maximum_cached_engines=100)
+    
+    converter = trt.TrtGraphConverterV2(
         input_saved_model_dir=exported_saved_model_dir,
+        conversion_params=conversion_params,
         input_saved_model_tags=['serve'],
-        input_saved_model_signature_key='predict',
-        precision_mode=FLAGS.precision_mode
-    )
+        input_saved_model_signature_key='predict'
+      )
+
     converter.convert()
 
     export_tftrt_dir_with_timestamp = os.path.join(FLAGS.export_tftrt_dir, str(int(time.time())))

@@ -471,7 +471,7 @@ def custom_estimator_model_fn(features, labels, mode, params, config):
     logits = deep_logits if wide_logits is None else wide_logits if deep_logits is None \
              else (wide_logits + deep_logits)
 
-  head = tf.contrib.estimator.binary_classification_head(loss_reduction=tf.compat.v1.losses.Reduction.SUM_OVER_BATCH_SIZE)
+  head = tf.estimator.BinaryClassHead()
 
   def train_op_fn(loss):
     global_step = tf.compat.v1.train.get_global_step()
