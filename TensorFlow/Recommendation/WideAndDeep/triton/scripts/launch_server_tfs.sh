@@ -19,6 +19,7 @@ docker run --gpus $NV_VISIBLE_DEVICES --rm $DETACHED \
    --ulimit memlock=-1 \
    --ulimit stack=67108864 \
    -e MODEL_NAME=widedeep \
+   -e "TF_FORCE_GPU_ALLOW_GROWTH = True" \
    -p8500:8500 \
    -p8501:8501 \
    -p8502:8502 \

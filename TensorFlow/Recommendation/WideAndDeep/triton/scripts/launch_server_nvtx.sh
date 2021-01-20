@@ -17,5 +17,5 @@ docker run --runtime=nvidia --rm $DETACHED \
    -e NVIDIA_VISIBLE_DEVICES=$NV_VISIBLE_DEVICES \
    -v $PWD/inference/models/:/models/ \
    -v $PWD/nsys:/nsys \
-   gitlab-master.nvidia.com:5005/dl/dgx/tritonserver:instrumented-triton-devel nsys profile -t cuda,nvtx,cudnn --delay=10 --duration=$DURATION --force-overwrite true --output /nsys/$OUTPUT tritonserver --model-store=/models  --strict-model-config=false --log-verbose=1 --backend-config=tensorflow,version=2
+   gitlab-master.nvidia.com:5005/dl/dgx/tritonserver:instrumented-triton-devel nsys profile -t cuda,nvtx,cudnn --delay=10 --duration=$DURATION --force-overwrite true --output /nsys/$OUTPUT tritonserver --model-store=/models  --log-verbose=1 --backend-config=tensorflow,version=2
    #gitlab-master.nvidia.com:5005/dl/dgx/tritonserver:instrumented-triton-devel tritonserver --model-store=/models --strict-model-config=false --log-verbose=1 --backend-config=tensorflow,version=2
