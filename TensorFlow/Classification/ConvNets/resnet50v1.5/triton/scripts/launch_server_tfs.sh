@@ -1,5 +1,5 @@
-NV_VISIBLE_DEVICES=${NVIDIA_VISIBLE_DEVICES:-"all"}
-DETACHED=${DETACHED:-"-it"}
+NV_VISIBLE_DEVICES=${NVIDIA_VISIBLE_DEVICES:-"0"}
+DETACHED=${DETACHED:-"-d"}
 
 BATCHING=${1:-false}
 ARGUMENTS=""
@@ -14,7 +14,7 @@ fi
 echo "Using args:  $(echo "$ARGUMENTS" | sed -e 's/   -/\n-/g')"
 
 # Start TFS in DETACHED state
-docker run --gpus $NV_VISIBLE_DEVICES --rm $DETACHED \
+docker run --runtime=nvidia --rm $DETACHED \
    --shm-size=1g \
    --ulimit memlock=-1 \
    --ulimit stack=67108864 \
@@ -22,5 +22,7 @@ docker run --gpus $NV_VISIBLE_DEVICES --rm $DETACHED \
    -p8500:8500 \
    -p8501:8501 \
    -p8502:8502 \
+   --name tfs_server_cont \
+   -e NVIDIA_VISIBLE_DEVICES=$NV_VISIBLE_DEVICES \
    -v $PWD/triton/inference/resnet50/1/model.savedmodel/:/models/resnet50/1/ \
    tensorflow/serving:latest-gpu $ARGUMENTS
