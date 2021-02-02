@@ -29,7 +29,7 @@ fi
 
 if [ "$SERVER_HOSTNAME" = "localhost" ]
 then
-    if [ ! "$(docker inspect -f "{{.State.Running}}" triton_server_cont)" = "true" ] ; then
+    if [ ! "$(docker inspect -f "{{.State.Running}}" triton_server_cont_bert)" = "true" ] ; then
 
         echo "Launching TRITON server"
         bash triton/scripts/launch_server.sh
@@ -37,7 +37,7 @@ then
 
         function cleanup_server {
             echo "Killing TRITON server"
-            docker kill triton_server_cont
+            docker kill triton_server_cont_bert
         }
 
         # Ensure we cleanup the server on exit
@@ -61,7 +61,7 @@ ARGS="\
    -p 200000 \
    -v \
    -i gRPC \
-   -u ${SERVER_HOSTNAME}:8001 \
+   -u ${SERVER_HOSTNAME}:8011 \
    -b ${BATCH_SIZE} \
    -l ${MAX_LATENCY} \
    --concurrency-range ${CONCURRENCY_RANGE} \
