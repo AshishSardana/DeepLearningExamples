@@ -24,6 +24,7 @@ docker run --runtime=nvidia --rm $DETACHED \
    -p8502:8502 \
    --name tfs_server_cont \
    -e NVIDIA_VISIBLE_DEVICES=$NV_VISIBLE_DEVICES \
+   -v $PWD/triton/batching_params_file_tfs:$PWD/triton/batching_params_file_tfs \
    -v $PWD/results/triton_models/bert/1/model.savedmodel/:/models/bert/1/ \
    tensorflow/serving:2.4.0-gpu $ARGUMENTS
    #gitlab-master.nvidia.com:5005/dl/dgx/tritonserver/tensorflow_serving:version_1 $ARGUMENTS

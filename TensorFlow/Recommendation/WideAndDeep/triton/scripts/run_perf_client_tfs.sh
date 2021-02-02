@@ -29,7 +29,7 @@ fi
 
 if [ "$SERVER_HOSTNAME" = "localhost" ]
 then
-    if [ ! "$(docker inspect -f "{{.State.Running}}" tfs_server_cont)" = "true" ] ; then
+    if [ ! "$(docker inspect -f "{{.State.Running}}" tfs_server_cont_wnd)" = "true" ] ; then
 
         echo "Launching TFS server"
         bash triton/scripts/launch_server_tfs.sh $BATCHING
@@ -37,7 +37,7 @@ then
 
         function cleanup_server {
             echo "Killing TFS server"
-            docker kill tfs_server_cont
+            docker kill tfs_server_cont_wnd
         }
 
         # Ensure we cleanup the server on exit
@@ -57,10 +57,10 @@ OUTPUT_FILE_CSV="/results/perf_client_tfs/${MODEL_NAME}/results_${TIMESTAMP}.csv
 ARGS="\
    --max-threads ${MAX_CLIENT_THREADS} \
    -m ${MODEL_NAME} \
-   -p 200000 \
+   -p 50000 \
    -v \
    -i gRPC \
-   -u ${SERVER_HOSTNAME}:8500 \
+   -u ${SERVER_HOSTNAME}:8520 \
    -l ${MAX_LATENCY} \
    --concurrency-range ${CONCURRENCY_RANGE} \
    -f ${OUTPUT_FILE_CSV} \ 

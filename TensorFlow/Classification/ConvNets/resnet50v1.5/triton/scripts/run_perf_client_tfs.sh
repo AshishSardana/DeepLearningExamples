@@ -57,7 +57,7 @@ OUTPUT_FILE_CSV="/results/perf_client_tfs/${MODEL_NAME}/results_${TIMESTAMP}.csv
 ARGS="\
    --max-threads ${MAX_CLIENT_THREADS} \
    -m ${MODEL_NAME} \
-   -p 200000 \
+   -p 10000 \
    -v \
    -i gRPC \
    -u ${SERVER_HOSTNAME}:8500 \

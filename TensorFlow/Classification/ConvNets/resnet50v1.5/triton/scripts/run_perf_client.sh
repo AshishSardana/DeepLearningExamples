@@ -57,7 +57,7 @@ ARGS="\
    --max-threads ${MAX_CLIENT_THREADS} \
    -m ${MODEL_NAME} \
    -x ${MODEL_VERSION} \
-   -p 200000 \
+   -p 10000 \
    -v \
    -i gRPC \
    -u ${SERVER_HOSTNAME}:8001 \
