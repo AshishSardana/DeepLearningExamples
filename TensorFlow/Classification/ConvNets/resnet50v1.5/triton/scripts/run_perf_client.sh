@@ -54,7 +54,6 @@ bash triton/scripts/launch.sh mkdir -p /results/perf_client/${MODEL_NAME}
 OUTPUT_FILE_CSV="/results/perf_client/${MODEL_NAME}/results_${TIMESTAMP}.csv"
 
 ARGS="\
-   --max-threads ${MAX_CLIENT_THREADS} \
    -m ${MODEL_NAME} \
    -x ${MODEL_VERSION} \
    -p 10000 \
@@ -62,7 +61,6 @@ ARGS="\
    -i gRPC \
    -u ${SERVER_HOSTNAME}:8001 \
    -b ${BATCH_SIZE} \
-   -l ${MAX_LATENCY} \
    --concurrency-range ${CONCURRENCY_RANGE} \
    -f ${OUTPUT_FILE_CSV}"
 
