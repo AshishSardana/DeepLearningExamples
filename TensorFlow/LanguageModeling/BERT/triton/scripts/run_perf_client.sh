@@ -18,8 +18,9 @@ MODEL_VERSION=${2:-1}
 BATCH_SIZE=${3:-1}
 MAX_LATENCY=${4:-100}
 MAX_CLIENT_THREADS=${5:-10}
-MAX_CONCURRENCY=${6:-50}
+CONCURRENCY_RANGE=${6:-"1:1:1"}
 SERVER_HOSTNAME=${7:-"localhost"}
+SEQ_LEN=${8:-384}
 
 if [[ $SERVER_HOSTNAME == *":"* ]]; then
   echo "ERROR! Do not include the port when passing the Server Hostname. These scripts require that the TRITON HTTP endpoint is on Port 8000 and the gRPC endpoint is on Port 8001. Exiting..."
@@ -58,13 +59,12 @@ ARGS="\
    -m ${MODEL_NAME} \
    -x ${MODEL_VERSION} \
    -p 200000 \
-   -d \
-   -v -z \
+   -v \
    -i gRPC \
    -u ${SERVER_HOSTNAME}:8001 \
    -b ${BATCH_SIZE} \
    -l ${MAX_LATENCY} \
-   -c ${MAX_CONCURRENCY} \
+   --concurrency-range ${CONCURRENCY_RANGE} \
    -f ${OUTPUT_FILE_CSV}"
 
 echo "Using args:  $(echo "$ARGS" | sed -e 's/   -/\n-/g')"

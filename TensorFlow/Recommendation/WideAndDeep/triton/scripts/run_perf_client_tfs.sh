@@ -18,7 +18,7 @@ MODEL_VERSION=${2:-1}
 BATCH_SIZE=${3:-1}
 MAX_LATENCY=${4:-100}
 MAX_CLIENT_THREADS=${5:-10}
-MAX_CONCURRENCY=${6:-50}
+CONCURRENCY_RANGE=${6:-"1:1:1"}
 SERVER_HOSTNAME=${7:-"localhost"}
 BATCHING=${8:-false}
 
@@ -58,12 +58,11 @@ ARGS="\
    --max-threads ${MAX_CLIENT_THREADS} \
    -m ${MODEL_NAME} \
    -p 200000 \
-   -d \
-   -v -z \
+   -v \
    -i gRPC \
    -u ${SERVER_HOSTNAME}:8500 \
    -l ${MAX_LATENCY} \
-   -c ${MAX_CONCURRENCY} \
+   --concurrency-range ${CONCURRENCY_RANGE} \
    -f ${OUTPUT_FILE_CSV} \ 
    -b ${BATCH_SIZE} \
    --service-kind tfserving \
