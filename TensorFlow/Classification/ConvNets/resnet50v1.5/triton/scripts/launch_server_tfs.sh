@@ -5,10 +5,10 @@ BATCHING=${1:-false}
 ARGUMENTS=""
 
 if [[ $BATCHING == true ]]; then
-  # enable batching with a specific batch_size and num_threads
-  #ARGUMENTS="--enable_batching --batching_parameters_file=$PWD/triton/batching_params_file_tfs"
+  # enable batching with specific params
+  ARGUMENTS="--enable_batching --batching_parameters_file=$PWD/triton/batching_params_file_tfs"
   # only enable batching with no specific params
-  ARGUMENTS="--enable_batching"
+  #ARGUMENTS="--enable_batching"
 fi
 
 echo "Using args:  $(echo "$ARGUMENTS" | sed -e 's/   -/\n-/g')"
@@ -25,4 +25,5 @@ docker run --runtime=nvidia --rm $DETACHED \
    --name tfs_server_cont \
    -e NVIDIA_VISIBLE_DEVICES=$NV_VISIBLE_DEVICES \
    -v $PWD/triton/inference/resnet50/1/model.savedmodel/:/models/resnet50/1/ \
-   tensorflow/serving:latest-gpu $ARGUMENTS
+   tensorflow/serving:2.4.0-gpu $ARGUMENTS
+   #gitlab-master.nvidia.com:5005/dl/dgx/tritonserver/tensorflow_serving:version_1 $ARGUMENTS

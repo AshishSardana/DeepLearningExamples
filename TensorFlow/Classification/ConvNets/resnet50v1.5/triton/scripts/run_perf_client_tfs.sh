@@ -46,7 +46,7 @@ then
     fi
 fi
 
-# Wait until server is up. Manual sleep of 30s
+# Wait until server is up. Manual sleep of 15s
 sleep 15
 
 TIMESTAMP=$(date "+%y%m%d_%H%M")
