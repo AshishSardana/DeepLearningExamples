@@ -1,4 +1,4 @@
-NV_VISIBLE_DEVICES=${NVIDIA_VISIBLE_DEVICES:-"0"}
+NV_VISIBLE_DEVICES=${NVIDIA_VISIBLE_DEVICES:-"3"}
 DETACHED=${DETACHED:-"-d"}
 
 BATCHING=${1:-false}
@@ -19,10 +19,10 @@ docker run --runtime=nvidia --rm $DETACHED \
    --ulimit memlock=-1 \
    --ulimit stack=67108864 \
    -e MODEL_NAME=bert \
-   -p8500:8500 \
-   -p8501:8501 \
-   -p8502:8502 \
-   --name tfs_server_cont \
+   -p8510:8500 \
+   -p8511:8501 \
+   -p8512:8502 \
+   --name tfs_server_cont_bert \
    -e NVIDIA_VISIBLE_DEVICES=$NV_VISIBLE_DEVICES \
    -v $PWD/triton/batching_params_file_tfs:$PWD/triton/batching_params_file_tfs \
    -v $PWD/results/triton_models/bert/1/model.savedmodel/:/models/bert/1/ \

@@ -9,7 +9,7 @@ docker run --runtime=nvidia --rm $DETACHED \
    -p8000:8000 \
    -p8001:8001 \
    -p8002:8002 \
-   --name triton_server_cont \
+   --name triton_server_cont_rn50 \
    -e NVIDIA_VISIBLE_DEVICES=$NV_VISIBLE_DEVICES \
    -v $PWD/triton/inference/:/models/ \
    -v /media/d2b/ashish/tme/triton_compare/tfs/tensorflow_backend/build_triton20.12_tfWithCudnnv8API:/host \

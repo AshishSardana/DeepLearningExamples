@@ -22,6 +22,7 @@ CONCURRENCY_RANGE=${6:-"1:1:1"}
 SERVER_HOSTNAME=${7:-"localhost"}
 SEQ_LEN=${8:-384}
 BATCHING=${9:-false}
+instance_count=${instance_count:-"uknwn"}
 
 if [[ $SERVER_HOSTNAME == *":"* ]]; then
   echo "ERROR! Do not include the port when passing the Server Hostname. These scripts require that the TRITON HTTP endpoint is on Port 8000 and the gRPC endpoint is on Port 8001. Exiting..."
@@ -30,7 +31,7 @@ fi
 
 if [ "$SERVER_HOSTNAME" = "localhost" ]
 then
-    if [ ! "$(docker inspect -f "{{.State.Running}}" tfs_server_cont)" = "true" ] ; then
+    if [ ! "$(docker inspect -f "{{.State.Running}}" tfs_server_cont_bert)" = "true" ] ; then
 
         echo "Launching TFS server"
         bash triton/scripts/launch_server_tfs.sh $BATCHING
@@ -38,7 +39,7 @@ then
 
         function cleanup_server {
             echo "Killing TFS server"
-            docker kill tfs_server_cont
+            docker kill tfs_server_cont_bert
         }
 
         # Ensure we cleanup the server on exit
@@ -53,14 +54,14 @@ sleep 15
 TIMESTAMP=$(date "+%y%m%d_%H%M")
 
 bash scripts/docker/launch.sh mkdir -p /results/perf_client_tfs/${MODEL_NAME}
-OUTPUT_FILE_CSV="/results/perf_client_tfs/${MODEL_NAME}/results_${TIMESTAMP}.csv"
+OUTPUT_FILE_CSV="/results/perf_client/${MODEL_NAME}/ic-${instance_count}_cc-${CONCURRENCY_RANGE}_bs-${BATCH_SIZE}_${TIMESTAMP}.csv"
 
 ARGS="\
    -m ${MODEL_NAME} \
    -p 10000 \
    -v \
    -i gRPC \
-   -u ${SERVER_HOSTNAME}:8500 \
+   -u ${SERVER_HOSTNAME}:8510 \
    --concurrency-range ${CONCURRENCY_RANGE} \
    -f ${OUTPUT_FILE_CSV} \
    -b ${BATCH_SIZE} \

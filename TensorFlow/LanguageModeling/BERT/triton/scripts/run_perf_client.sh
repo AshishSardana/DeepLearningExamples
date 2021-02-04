@@ -21,6 +21,7 @@ MAX_CLIENT_THREADS=${5:-10}
 CONCURRENCY_RANGE=${6:-"1:1:1"}
 SERVER_HOSTNAME=${7:-"localhost"}
 SEQ_LEN=${8:-384}
+instance_count=${instance_count:-"uknwn"}
 
 if [[ $SERVER_HOSTNAME == *":"* ]]; then
   echo "ERROR! Do not include the port when passing the Server Hostname. These scripts require that the TRITON HTTP endpoint is on Port 8000 and the gRPC endpoint is on Port 8001. Exiting..."
@@ -52,7 +53,7 @@ bash triton/scripts/wait_for_triton_server.sh $SERVER_HOSTNAME
 TIMESTAMP=$(date "+%y%m%d_%H%M")
 
 bash scripts/docker/launch.sh mkdir -p /results/perf_client/${MODEL_NAME}
-OUTPUT_FILE_CSV="/results/perf_client/${MODEL_NAME}/results_${TIMESTAMP}.csv"
+OUTPUT_FILE_CSV="/results/perf_client/${MODEL_NAME}/ic-${instance_count}_cc-${CONCURRENCY_RANGE}_bs-${BATCH_SIZE}_${TIMESTAMP}.csv"
 
 ARGS="\
    -m ${MODEL_NAME} \

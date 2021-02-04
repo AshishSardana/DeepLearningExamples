@@ -22,7 +22,7 @@ docker run --runtime=nvidia --rm $DETACHED \
    -p8500:8500 \
    -p8501:8501 \
    -p8502:8502 \
-   --name tfs_server_cont \
+   --name tfs_server_cont_rn50 \
    -e NVIDIA_VISIBLE_DEVICES=$NV_VISIBLE_DEVICES \
    -v $PWD/triton/batching_params_file_tfs:$PWD/triton/batching_params_file_tfs \
    -v $PWD/triton/inference/resnet50/1/model.savedmodel/:/models/resnet50/1/ \

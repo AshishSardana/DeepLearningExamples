@@ -13,7 +13,7 @@ then
     do
         echo "model concurrency: $model_concurrency"
         sudo sed -i "s/^        count:.*/        count: $model_concurrency/" results/triton_models/bert/config.pbtxt
-        bash triton/scripts/run_perf_client.sh "bert" 1 $static_batch_size 100 10 $client_concurrency localhost true
+        instance_count=$model_concurrency bash triton/scripts/run_perf_client.sh "bert" 1 $static_batch_size 100 10 $client_concurrency localhost
     done
 else
     sudo sed -i "s/dynamic_batching.*/ /" results/triton_models/bert/config.pbtxt
@@ -27,7 +27,7 @@ else
         do
             echo "model concurrency: $model_concurrency"
             sudo sed -i "s/^        count:.*/        count: $model_concurrency/" results/triton_models/bert/config.pbtxt
-            bash triton/scripts/run_perf_client.sh "bert" 1 $static_batch_size 100 10 $client_concurrency localhost
+            instance_count=$model_concurrency bash triton/scripts/run_perf_client.sh "bert" 1 $static_batch_size 100 10 $client_concurrency localhost
         done  
     done
 fi
