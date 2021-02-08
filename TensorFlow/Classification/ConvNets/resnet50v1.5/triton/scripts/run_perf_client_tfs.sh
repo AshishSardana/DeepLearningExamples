@@ -53,7 +53,7 @@ sleep 15
 TIMESTAMP=$(date "+%y%m%d_%H%M")
 
 bash triton/scripts/launch.sh mkdir -p /results/perf_client_tfs/${MODEL_NAME}
-OUTPUT_FILE_CSV="/results/perf_client/${MODEL_NAME}/ic-${instance_count}_cc-${CONCURRENCY_RANGE}_bs-${BATCH_SIZE}_${TIMESTAMP}.csv"
+OUTPUT_FILE_CSV="/results/perf_client_tfs/${MODEL_NAME}/ic-${instance_count}_cc-${CONCURRENCY_RANGE}_bs-${BATCH_SIZE}_${TIMESTAMP}.csv"
 
 ARGS="\
    -m ${MODEL_NAME} \
