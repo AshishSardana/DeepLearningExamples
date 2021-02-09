@@ -9,6 +9,7 @@ docker run --gpus $NV_VISIBLE_DEVICES --rm -it \
     --shm-size=1g \
     --ulimit memlock=-1 \
     --ulimit stack=67108864 \
+    -u $(id -u):$(id -g) \
     -e NVIDIA_VISIBLE_DEVICES=$NV_VISIBLE_DEVICES \
     -v $PWD:/workspace/resnet50 \
     -v $PWD/results:/results \
