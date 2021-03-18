@@ -1,0 +1,80 @@
+# Path to the Model Repository
+model_repository: /workspace/examples/results/triton_models/
+
+# How Model Analyzer will launch triton. It should
+# be either "docker", "local", or "remote".
+# See docs/launch_modes.md for more information.
+triton_launch_mode: remote
+
+# List of the model names to be analyzed
+model_names: bert
+
+# Concurrency values to be used for the analysis
+concurrency:     
+   start: 1
+   stop: 16
+   step: 1
+
+# Batch size values to be used for the analysis
+batch_sizes: 1,4,8
+
+# Whether to export metrics to a file
+export: true
+
+# Export path to be used
+export_path: "/workspace/examples/results/model_analyzer/bert/remote/ic-1_cc-1:16:1_bs-148_nondb"
+
+# File name to be used for the model inference results
+
+# File name to be used for the GPU metrics results
+
+# File name to be used for storing the server only metrics.
+
+# Specifies the maximum number of retries for any retry attempt.
+
+# Specifies how long (seconds) to gather server-only metrics
+duration_seconds: 10
+
+# Duration of waiting time between each metric measurement in seconds
+
+# The protocol used to communicate with the Triton Inference Server. Only 'http' and 'grpc' are allowed for the values.
+client_protocol: grpc
+
+# The full path to the perf_analyzer binary executable
+
+# Time interval in milliseconds between perf_analyzer measurements.
+# perf_analyzer will take measurements over all the requests completed within
+# this time interval.
+perf_measurement_window: 20000
+
+# Stops writing the output from the perf_analyzer to stdout.
+
+# Triton Server version used when launching using Docker mode
+
+# Logging level
+
+# Triton Server HTTP endpoint url used by Model Analyzer client. Will be ignored if server-launch-mode is not 'remote'".
+
+# Triton Server GRPC endpoint url used by Model Analyzer client. Will be ignored if server-launch-mode is not 'remote'".
+triton_grpc_endpoint: localhost:8001
+
+# Triton Server metrics endpoint url used by Model Analyzer client. Will be ignored if server-launch-mode is not 'remote'".
+
+# The full path to the tritonserver binary executable
+
+# The full path to a file to write the Triton Server output log.
+
+# List of GPU UUIDs to be used for the profiling. Use 'all' to profile all the GPUs visible by CUDA."
+gpus: 'all'
+
+# Constraints to filter out the results
+constraints:
+    perf_latency:
+      max: 100
+
+# Using manual config search
+run_config_search_disable: True
+
+# Save intermediate model repositories
+override_output_model_repository: True
+output_model_repository_path: "/workspace/examples/results/model_analyzer/output_model"

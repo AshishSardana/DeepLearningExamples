@@ -7,10 +7,7 @@ docker run --runtime=nvidia --rm $DETACHED \
    --ulimit memlock=-1 \
    --ulimit stack=67108864 \
    --net=host \
+   -u $(id -u):$(id -g) \
    -e NVIDIA_VISIBLE_DEVICES=$NV_VISIBLE_DEVICES \
    -v $PWD:/workspace/examples \
-   modelanalyzer model-analyzer -f /workspace/examples/triton/config_model_analyzer.yaml
-   #nvcr.io/nvidia/tritonserver:20.09-py3 tritonserver --model-store=/models --log-verbose=0 --strict-model-config=false --backend-config=tensorflow,version=2
-   #nvcr.io/nvidia/tritonserver:davidg-master-py3-base-tf2cudnn8 tritonserver --model-store=/models  --log-verbose=0 --strict-model-config=false --backend-config=tensorflow,version=2
-   #nvcr.io/nvidia/tritonserver:20.09-py3 tritonserver --model-store=/models --log-verbose=0 --strict-model-config=false --backend-config=tensorflow,version=2 
-   #gitlab-master.nvidia.com:5005/dl/dgx/tritonserver/20.11-cuda11-cudnn7:latest tritonserver --model-store=/models --strict-model-config=false --log-verbose=1 --backend-config=tensorflow,version=2
+   modelanalyzer model-analyzer -f /workspace/examples/triton/config_model_analyzer_remote.yaml

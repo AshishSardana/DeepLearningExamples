@@ -61,7 +61,7 @@ ARGS="\
    -p 10000 \
    -v \
    -i gRPC \
-   -u ${SERVER_HOSTNAME}:8021 \
+   -u ${SERVER_HOSTNAME}:8001 \
    -b ${BATCH_SIZE} \
    --concurrency-range ${CONCURRENCY_RANGE} \
    -f ${OUTPUT_FILE_CSV}"
