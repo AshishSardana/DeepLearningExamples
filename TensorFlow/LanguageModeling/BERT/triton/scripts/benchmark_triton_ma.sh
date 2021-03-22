@@ -24,7 +24,7 @@ then
 else
     sed -i "s/dynamic_batching.*/ /" results/triton_models/bert/config.pbtxt
     sed -i "s/max_batch_size.*/max_batch_size: 8/" results/triton_models/bert/config.pbtxt
-    for model_concurrency in 1
+    for model_concurrency in 2
     do
         echo "model concurrency: $model_concurrency"
         sed -i "s/^        count:.*/        count: $model_concurrency/" results/triton_models/bert/config.pbtxt
