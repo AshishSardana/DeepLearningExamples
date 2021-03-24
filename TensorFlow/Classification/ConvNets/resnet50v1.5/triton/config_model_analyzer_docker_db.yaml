@@ -1,28 +1,41 @@
+# Docker image to be used by tritonserver
+triton_docker_image: gitlab-master.nvidia.com:5005/dl/dgx/tritonserver/tritonserver-21.02-modified:cublas_11.2_cudnn_8.0.4_tf_2.3.0-devel
+
 # Path to the Model Repository
-model_repository: /workspace/examples/results/triton_models/
+model_repository: /workspace/examples/triton/inference/
 
 # How Model Analyzer will launch triton. It should
 # be either "docker", "local", or "remote".
 # See docs/launch_modes.md for more information.
-triton_launch_mode: remote
+triton_launch_mode: docker
 
 # List of the model names to be analyzed
-model_names: bert
+model_names: resnet50
 
 # Concurrency values to be used for the analysis
-concurrency:     
-   start: 1
-   stop: 16
-   step: 1
+concurrency: [64,96,128,160,192,256,320]
+#   start: 1
+#   stop: 16
+#   step: 1
 
 # Batch size values to be used for the analysis
-batch_sizes: 1,4,8
+batch_sizes: 1
+
+# Model config values to use for the sweep
+model_config_parameters:
+   dynamic_batching:
+      max_queue_delay_microseconds: 0
+   max_batch_size: 64
+   instance_group:
+   -
+      kind: KIND_GPU
+      count: [1, 2]
 
 # Whether to export metrics to a file
 export: true
 
 # Export path to be used
-export_path: "/workspace/examples/results/model_analyzer/bert/remote/ic-2_cc-1:16:1_bs-148_nondb"
+export_path: "/workspace/examples/results/model_analyzer/resnet50/docker/ic-12_cc-64:32:160-128:64:320_bs-1_db-1"
 
 # File name to be used for the model inference results
 
@@ -56,7 +69,6 @@ perf_measurement_window: 15000
 # Triton Server HTTP endpoint url used by Model Analyzer client. Will be ignored if server-launch-mode is not 'remote'".
 
 # Triton Server GRPC endpoint url used by Model Analyzer client. Will be ignored if server-launch-mode is not 'remote'".
-triton_grpc_endpoint: localhost:8001
 
 # Triton Server metrics endpoint url used by Model Analyzer client. Will be ignored if server-launch-mode is not 'remote'".
 
@@ -77,4 +89,4 @@ run_config_search_disable: True
 
 # Save intermediate model repositories
 override_output_model_repository: True
-output_model_repository_path: "/workspace/examples/results/model_analyzer/output_model"
+output_model_repository_path: "/home/scratch.asardana_sw/tfs/DeepLearningExamples/TensorFlow/Classification/ConvNets/resnet50v1.5/results/model_analyzer/output_model/my_model"

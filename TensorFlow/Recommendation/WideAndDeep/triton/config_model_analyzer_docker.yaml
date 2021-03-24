@@ -1,37 +1,45 @@
+# Docker image to be used by tritonserver
+triton_docker_image: gitlab-master.nvidia.com:5005/dl/dgx/tritonserver/tritonserver-21.02-modified:cublas_11.2_cudnn_8.0.4_tf_2.3.0-devel
+
 # Path to the Model Repository
-model_repository: /workspace/examples/inference/models/
+model_repository: /workspace/examples/triton/inference/
 
 # How Model Analyzer will launch triton. It should
 # be either "docker", "local", or "remote".
 # See docs/launch_modes.md for more information.
-triton_launch_mode: remote
+triton_launch_mode: docker
 
 # List of the model names to be analyzed
-model_names: widedeep
+model_names: resnet50
 
 # Concurrency values to be used for the analysis
-concurrency:     
-   start: 1
-   stop: 16
-   step: 1
+concurrency: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,32,48,64,80,96]
+#   start: 1
+#   stop: 16
+#   step: 1
 
 # Batch size values to be used for the analysis
 batch_sizes: 1,8,256
+
+# Model config values to use for the sweep
+model_config_parameters:
+   max_batch_size: 256
+   instance_group:
+   -
+      kind: KIND_GPU
+      count: [1, 2, 4]
 
 # Whether to export metrics to a file
 export: true
 
 # Export path to be used
-export_path: "/workspace/examples/results/model_analyzer/widedeep/ic-unkn_cc-1:16:1_bs-18256"
+export_path: "/workspace/examples/results/model_analyzer/widedeep/docker/ic-124_cc-1:16:1-32:96:16_bs-18256_nondb-1"
 
 # File name to be used for the model inference results
-filename_model_inference: metrics-model-inference.csv
 
 # File name to be used for the GPU metrics results
-filename_model_gpu: metrics-model-gpu.csv
 
 # File name to be used for storing the server only metrics.
-filename_server_only: metrics-server-only.csv
 
 # Specifies the maximum number of retries for any retry attempt.
 
@@ -48,7 +56,7 @@ client_protocol: grpc
 # Time interval in milliseconds between perf_analyzer measurements.
 # perf_analyzer will take measurements over all the requests completed within
 # this time interval.
-perf_measurement_window: 10000
+perf_measurement_window: 15000
 
 # Stops writing the output from the perf_analyzer to stdout.
 
@@ -59,7 +67,6 @@ perf_measurement_window: 10000
 # Triton Server HTTP endpoint url used by Model Analyzer client. Will be ignored if server-launch-mode is not 'remote'".
 
 # Triton Server GRPC endpoint url used by Model Analyzer client. Will be ignored if server-launch-mode is not 'remote'".
-triton_grpc_endpoint: localhost:8001
 
 # Triton Server metrics endpoint url used by Model Analyzer client. Will be ignored if server-launch-mode is not 'remote'".
 
@@ -74,3 +81,10 @@ gpus: 'all'
 constraints:
     perf_latency:
       max: 100
+
+# Using manual config search
+run_config_search_disable: True
+
+# Save intermediate model repositories
+override_output_model_repository: True
+output_model_repository_path: "/home/scratch.asardana_sw/tfs/DeepLearningExamples/TensorFlow/Recommendation/WideAndDeep/results/model_analyzer/output_model/my_model"

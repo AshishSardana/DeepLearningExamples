@@ -13,19 +13,27 @@ triton_launch_mode: docker
 model_names: bert
 
 # Concurrency values to be used for the analysis
-concurrency:     
-   start: 1
-   stop: 16
-   step: 1
+concurrency: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,32,48,64,80,96]
+#   start: 1
+#   stop: 16
+#   step: 1
 
 # Batch size values to be used for the analysis
 batch_sizes: 1,4,8
+
+# Model config values to use for the sweep
+model_config_parameters:
+   max_batch_size: 8
+   instance_group:
+   -
+      kind: KIND_GPU
+      count: [1, 2]
 
 # Whether to export metrics to a file
 export: true
 
 # Export path to be used
-export_path: "/workspace/examples/results/model_analyzer/bert/docker/ic-12_cc-1:16:1_bs-148_nondb"
+export_path: "/workspace/examples/results/model_analyzer/bert/docker/ic-12_cc-1:16:1-32:96:16_bs-148_nondb-1"
 
 # File name to be used for the model inference results
 
@@ -79,4 +87,4 @@ run_config_search_disable: True
 
 # Save intermediate model repositories
 override_output_model_repository: True
-output_model_repository_path: "/workspace/examples/results/model_analyzer/output_model"
+output_model_repository_path: "/home/scratch.asardana_sw/tfs/DeepLearningExamples/TensorFlow/LanguageModeling/BERT/results/model_analyzer/output_model/my_model"
