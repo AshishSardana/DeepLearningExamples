@@ -19,3 +19,4 @@ instance_group [
     {
         count: 1
     } 
+]

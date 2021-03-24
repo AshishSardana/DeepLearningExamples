@@ -13,4 +13,4 @@ docker run --gpus $NV_VISIBLE_DEVICES --rm -it \
     -e NVIDIA_VISIBLE_DEVICES=$NV_VISIBLE_DEVICES \
     -v $PWD:/workspace/resnet50 \
     -v $PWD/results:/results \
-    bert $CMD
+    nvcr.io/nvidia/tritonserver:21.02-py3-sdk $CMD
