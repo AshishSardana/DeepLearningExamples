@@ -8,9 +8,10 @@ docker run --runtime=nvidia --rm $DETACHED \
    --ulimit stack=67108864 \
    --net=host \
    --privileged \
+   --group-add 999 \
    -v /home/scratch.asardana_sw/tfs/DeepLearningExamples/TensorFlow/Recommendation/WideAndDeep/results/model_analyzer/output_model/:/home/scratch.asardana_sw/tfs/DeepLearningExamples/TensorFlow/Recommendation/WideAndDeep/results/model_analyzer/output_model/ \
    -v /var/run/docker.sock:/var/run/docker.sock \
    -u $(id -u):$(id -g) \
    -e NVIDIA_VISIBLE_DEVICES=$NV_VISIBLE_DEVICES \
    -v $PWD:/workspace/examples \
-   model-analyzer model-analyzer -f /workspace/examples/triton/config_model_analyzer_docker.yaml
+   model-analyzer model-analyzer -f /workspace/examples/triton/config_model_analyzer_docker_auto.yaml

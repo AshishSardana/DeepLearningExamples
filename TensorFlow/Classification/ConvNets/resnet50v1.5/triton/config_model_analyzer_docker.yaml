@@ -10,7 +10,14 @@ model_repository: /workspace/examples/triton/inference/
 triton_launch_mode: docker
 
 # List of the model names to be analyzed
-model_names: resnet50
+model_names:
+  resnet50:
+    model_config_parameters:
+     max_batch_size: 128
+     instance_group:
+      -
+        kind: KIND_GPU
+        count: [1, 2,4]
 
 # Concurrency values to be used for the analysis
 concurrency: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,32,48,64,80,96]
@@ -33,7 +40,7 @@ model_config_parameters:
 export: true
 
 # Export path to be used
-export_path: "/workspace/examples/results/model_analyzer/resnet50/docker/ic-124_cc-1:16:1-32:96:16_bs-1864128_nondb-1"
+export_path: "/workspace/examples/results/model_analyzer/resnet50/docker/ic-124_cc-1:16:1-32:96:16_bs-1864128_nondb-10ms"
 
 # File name to be used for the model inference results
 
@@ -80,7 +87,7 @@ gpus: 'all'
 # Constraints to filter out the results
 constraints:
     perf_latency:
-      max: 100
+      max: 10
 
 # Using manual config search
 run_config_search_disable: True
@@ -88,3 +95,9 @@ run_config_search_disable: True
 # Save intermediate model repositories
 override_output_model_repository: True
 output_model_repository_path: "/home/scratch.asardana_sw/tfs/DeepLearningExamples/TensorFlow/Classification/ConvNets/resnet50v1.5/results/model_analyzer/output_model/my_model"
+
+# Prevent perf_analyzer from getting killed:
+perf_analyzer_cpu_util: 300
+
+# Number of top configs to capture in the summary report
+top_n_configs: 10 
